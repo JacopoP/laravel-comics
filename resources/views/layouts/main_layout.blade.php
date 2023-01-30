@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pippo</title>
     @vite('resources/js/app.js')
+    @yield('head')
 </head>
 <body>
-    
+    @include('components.header_layout')
 </body>
 </html>

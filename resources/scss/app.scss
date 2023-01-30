@@ -1,1 +1,74 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+@import 'partials/variables.scss';
+
+.bg_dc {
+    background-color: $blue_DC;
+}
+
+.color_dc {
+    color: $blue_DC;
+}
+
+header {
+
+    .bg_dc {
+        font-size: .8rem;
+    }
+
+    $nav_heigth: 115px;
+
+    nav {
+        height: $nav_heigth;
+
+        img {
+            height: 80px;
+        }
+
+        ul {
+            list-style: none;
+            height: 100%;
+            margin: 0;
+
+            li {
+                height: 100%;
+                line-height: $nav_heigth;
+
+                .color_dc {
+                    font-size: .7rem;
+                }
+
+                &.my_active {
+                    color: $blue_DC;
+                    border-bottom: 5px solid $blue_DC;
+                }
+            }
+        }
+
+        form {
+            width: 135px;
+            border-bottom: 2px solid $blue_DC;
+
+            input {
+                width: calc(100% - 21px);
+            }
+
+            label {
+                -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);
+            }
+        }
+    }
+
+    #jumbo {
+        height: 400px;
+        width: 100%;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+}
