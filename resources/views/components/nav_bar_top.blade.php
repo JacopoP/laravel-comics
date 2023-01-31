@@ -15,7 +15,7 @@
     </ul>
 
     <form>
-        <input type="text" id="fake_search" class="form-controll border border-0 text-end" disabled value="Search">
+        <input type="text" id="fake_search" class="form-controll border border-0 text-end fw-semibold" disabled value="Search">
         <label for="#fake_search">&#x1F50E;&#xFE0E;</label>
     </form>
 </nav>

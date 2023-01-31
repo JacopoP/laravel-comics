@@ -4,6 +4,7 @@
 
 .bg_dc {
     background-color: $blue_DC;
+    color: #fff;
 }
 
 .color_dc {
@@ -69,6 +70,52 @@ header {
             width: 100%;
             object-fit: cover;
             object-position: top;
+        }
+    }
+}
+
+main {
+    &#main_first {
+        background-color: #1c1c1c;
+    }
+
+    .container {
+        position: relative;
+        padding-bottom: 20px;
+
+        #current {
+            position: absolute;
+            transform: translate(0%, -50%);
+            width: 250px;
+        }
+
+        #card-container {
+            column-gap: 25px;
+            row-gap: 45px;
+            padding: 50px 0;
+
+            .card {
+                width: calc(100% / 6 - 24px);
+                background: transparent;
+
+                img {
+                    aspect-ratio: 1;
+                    object-fit: cover;
+                    object-position: top;
+                }
+
+                .card-title {
+                    font-size: .9rem;
+                }
+            }
+        }
+
+        #more {
+            $more_height: 35px;
+            width: 180px;
+            height: $more_height;
+            margin: 0 auto;
+            line-height: $more_height;
         }
     }
 }
