@@ -10,5 +10,6 @@
 <body>
     @include('components.header_layout')
     @yield('main')
+    @include('components.footer_layout')
 </body>
 </html>

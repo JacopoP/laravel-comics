@@ -148,3 +148,77 @@ main {
         }
     }
 }
+
+footer {
+    background-color: #303030;
+
+    #footer_menu {
+        background-image: url('/resources/img/footer-bg.jpg');
+        background-size: cover;
+        height: 400px;
+        width: 100%;
+        overflow-y: hidden;
+
+        .container {
+            height: 100%;
+
+            #container-left-flex {
+                width: 40%;
+
+                #list-container {
+                    width: 85%;
+                    height: 85%;
+                    padding-top: 35px;
+
+                    ul {
+                        padding: 0;
+                        list-style: none;
+
+                        li {
+                            opacity: .5;
+                            font-size: .85rem;
+                        }
+                    }
+                }
+
+                #copyright {
+                    font-size: .8rem;
+
+                    span {
+                        opacity: .5;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        img {
+            width: 560px;
+            height: 560px;
+            position: relative;
+            bottom: 80px;
+        }
+    }
+
+    #cta {
+        height: 100px;
+
+        #sign_cta {
+            border: 2px solid $blue_DC;
+        }
+
+        #socials {
+            span {
+                margin-right: 8px;
+            }
+
+            img {
+                margin-left: 16px;
+            }
+        }
+    }
+}
