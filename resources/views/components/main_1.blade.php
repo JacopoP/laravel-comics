@@ -2,7 +2,7 @@
 
 @section('main')
     <main id="main_first">
-        <div class="container">
+        <section class="container">
             <div id="current" class="bg_dc fs-3 fw-semibold text-center py-2">CURRENT SERIES</div>
             <div class="d-flex flex-wrap gx-2 justify-content-center" id="card-container">
                 <?php
@@ -236,6 +236,7 @@
                 ?>
             </div>
             <div id="more" class="bg_dc fw-semibold text-center">LOAD MORE</div>
-        </div>
+        </section>
+        @include('components.shop_bar')
     </main>
 @endsection

@@ -11,6 +11,10 @@
     color: $blue_DC;
 }
 
+.container {
+    --bs-gutter-x: 0;
+}
+
 header {
 
     .bg_dc {
@@ -81,7 +85,10 @@ main {
 
     .container {
         position: relative;
-        padding-bottom: 20px;
+
+        &:first-child {
+            padding-bottom: 20px;
+        }
 
         #current {
             position: absolute;
@@ -116,6 +123,28 @@ main {
             height: $more_height;
             margin: 0 auto;
             line-height: $more_height;
+        }
+    }
+
+    #shop_bar {
+        padding: 50px 0;
+
+        ul {
+            list-style: none;
+
+            li {
+                $li_height: 55px;
+                height: $li_height;
+                line-height: $li_height;
+                font-size: .9rem;
+                white-space: nowrap;
+                min-width: 165px;
+
+                img {
+                    max-height: 100%;
+                    max-width: 55px;
+                }
+            }
         }
     }
 }
