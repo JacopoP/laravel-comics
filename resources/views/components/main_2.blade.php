@@ -1,13 +1,9 @@
 @extends('layouts.main_layout')
 
 @section('main')
-    <main id="main_first">
-        <section class="container">
-            <div id="current" class="bg_dc fs-3 fw-semibold text-center py-2">CURRENT SERIES</div>
-            <div class="d-flex flex-wrap gx-2 justify-content-center" id="card-container">
-                <?php
-    
-                    $comics= [
+    <main>
+        <?php
+        $comics= [
                         [
                             "title" => "Action Comics #1000: The Deluxe Edition",
                             "description" => "The celebration of 1,000 issues of Action Comics continues with a new, Deluxe Edition of the amazing comic that won raves when it hit comics shops in April! This hardcover includes all the stories from that issue, plus the tale by writer Paul Levitz and artist Neal Adams that appeared in the Action Comics: 80 Years Of Superman hardcover, as well as all the variant covers, design sketches by Jim Lee for Superman’s new look, scripts for the stories, the original art from the lost story featuring art by Curt Swan and more! Plus: a complete reprint of the stories that started it all—the Superman stories Action Comics #1 and 2 from 1938!",
@@ -220,23 +216,111 @@
                             ],
                         ],
                     ];
-    
-                    foreach ($comics as $comic) {
-                        echo(
-                            '<div class="card border-0 flex-shrink-0">
-                                <img src="' .$comic['thumb'] .'">
-                                <div class="card-body p-0 mt-2">
-                                    <div class="card-title text-uppercase text-white">
-                                        <a href="action-comics">' .$comic['series'] .'</a>
-                                    </div>
-                                </div>
-                            </div>'  
-                        );  
-                    }
-                ?>
+        ?>
+        <div id="blue_bar" class="bg_dc"></div>
+        <section class="my_container d-flex justify-content-between" id="comic_info">
+            <div id="thumb">
+                <img src="{{$comics[0]['thumb']}}" alt="">
+                <span id="label" class="text-white">COMIC BOOK</span>
+                <span id="expand" class="text-center text-white">VIEW GALLERY</span>
             </div>
-            <div id="more" class="bg_dc fw-semibold text-center">LOAD MORE</div>
+            <div id="left_my_container">
+                <h3 class="fw-semibold">{{$comics[0]['title']}}</h3>
+                <div id="green_bar" class="d-flex">
+                    <div id="left_bar">
+                        <span class="opacity">U.S. Price:</span>
+                        &nbsp;{{$comics[0]['price']}}
+                        <span id="status" class="opacity">AVAILABLE</span>
+                    </div>
+                    <div id="right_bar">
+                        Check Availability
+                        <span id="arrow">&#9660;</span>
+                    </div>
+                </div>
+                <p class="mt-3">
+                    {{$comics[0]['description']}}
+                </p>
+            </div>
+            <div id="right_my_container">
+                <img src="{{Vite::asset('resources/img/adv.jpg')}}">
+                <span class="fw-semibold">ADVERTISMENT</span>
+            </div>
         </section>
-        @include('components.shop_bar')
+        <section id="comic_specs">
+            <div class="my_container d-flex justify-content-between align-items-start">
+                <table id="left_table" class="table">
+                    <thead>
+                        <tr>
+                            <th>Talent</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Art by:</td>
+                            <td>
+                                @foreach ($comics[0]['artists'] as $key => $artist)
+                                    {{$artist}}{{$key < count($comics[0]['artists'])-1 ? ', ' : ' '}}
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Written by:</td>
+                            <td>
+                                @foreach ($comics[0]['writers'] as $key => $artist)
+                                    {{$artist}}{{$key < count($comics[0]['writers'])-1 ? ', ' : ' '}}
+                                @endforeach
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="right_table" class="table">
+                    <thead>
+                        <tr>
+                            <th>Specs</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Series:</td>
+                            <td>
+                                {{$comics[0]['series']}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>U.S. Price</td>
+                            <td>
+                                {{$comics[0]['price']}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>On Sale Date:</td>
+                            <td>
+                                {{date('M d Y', strtotime($comics[0]['sale_date']))}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section id="main_2_shopbar" class="d-flex justify-content-center">
+            <div class="shop_card d-flex justify-content-between">
+                <span class="fw-semibold">DIGITAL COMICS</span>
+                <img src="{{Vite::asset('resources/img/cta-icon-1.png')}}">
+            </div>
+            <div class="shop_card d-flex justify-content-between">
+                <span class="fw-semibold">SHOP DC</span>
+                <img src="{{Vite::asset('resources/img/cta-icon-4.png')}}">
+            </div>
+            <div class="shop_card d-flex justify-content-between">
+                <span class="fw-semibold">COMIC SHOP LOCATOR</span>
+                <img src="{{Vite::asset('resources/img/cta-icon-3.png')}}">
+            </div>
+            <div class="shop_card d-flex justify-content-between">
+                <span class="fw-semibold">SUBSCRIPTIONS</span>
+                <img src="{{Vite::asset('resources/img/cta-icon-2.png')}}">
+            </div>
+        </section>
     </main>
 @endsection

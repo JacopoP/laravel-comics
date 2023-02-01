@@ -113,6 +113,11 @@ main {
 
                 .card-title {
                     font-size: .9rem;
+
+                    a {
+                        color: inherit;
+                        text-decoration: none;
+                    }
                 }
             }
         }
@@ -144,6 +149,148 @@ main {
                     max-height: 100%;
                     max-width: 55px;
                 }
+            }
+        }
+    }
+
+    #blue_bar {
+        width: 100%;
+        height: 75px;
+    }
+
+    $tile_main_2_color: #074782;
+    $thumb_blue: #00a9d9;
+
+    .my_container {
+        width: 1020px;
+        margin: 0 auto;
+        position: relative;
+
+        &#comic_info {
+            padding-top: 75px;
+            padding-bottom: 65px;
+        }
+
+        #thumb {
+            position: absolute;
+            top: -320px;
+            border: 1px solid #fff;
+
+            #label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-size: .7rem;
+                background-color: $thumb_blue;
+            }
+
+            #expand {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                font-size: .8rem;
+                background-color: $thumb_blue;
+            }
+        }
+
+        #left_my_container {
+            width: 65%;
+
+            h3 {
+                color: $tile_main_2_color;
+            }
+
+            #green_bar {
+                background-color: #55ba59;
+                color: #fff;
+                border-bottom: 1px solid #418345;
+
+                &>* {
+                    padding: 15px 25px;
+                }
+
+                #left_bar {
+                    width: 70%;
+                    border-right: 1px solid #418345;
+                    position: relative;
+
+                    #status {
+                        position: absolute;
+                        right: 25px;
+                    }
+                }
+
+                #right_bar {
+                    width: calc(30% - 1px);
+
+                    #arrow {
+                        font-size: .5rem;
+                    }
+                }
+
+                .opacity {
+                    opacity: .6;
+                }
+            }
+        }
+
+        #right_my_container {
+            position: relative;
+
+            span {
+                position: absolute;
+                right: 0;
+                top: -25px;
+            }
+        }
+    }
+
+    #comic_specs {
+        background-color: #f6f6f6;
+        border-top: 1px solid #ebebeb;
+        border-bottom: 1px solid #ebebeb;
+        padding: 30px 0 100px;
+
+        & .my_container>* {
+            width: 48%;
+        }
+
+        table {
+            tr {
+                th {
+                    font-size: 1.5rem;
+                }
+
+                td {
+                    font-size: .8rem;
+                    color: $thumb_blue;
+                }
+
+                >*:first-child {
+                    width: 30%;
+                    color: $tile_main_2_color;
+                }
+            }
+        }
+    }
+
+    #main_2_shopbar {
+        background-color: #f6f6f6;
+
+        .shop_card {
+            width: 250px;
+            height: 70px;
+            padding: 15px 20px;
+            border-left: 1px solid #ebebeb;
+            border-right: 1px solid #ebebeb;
+
+            span {
+                opacity: .5;
+                font-size: .8rem;
+            }
+
+            img {
+                max-height: 40px;
             }
         }
     }

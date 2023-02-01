@@ -6,6 +6,6 @@ Route::get('/', function () {
     return view('components.main_1');
 });
 
-Route::get('/prodotto', function () {
+Route::get('/action-comics', function () {
     return view('components.main_2');
 });
